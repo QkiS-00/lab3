@@ -7,4 +7,13 @@ function memoize(fn, options = {}) {
     cache.set(key, result);
     return result;
   };
-}
+}const {
+    maxSize = Infinity,
+  } = options;
+  function evict() {
+    const oldestKey = cache.keys().next().value;
+    cache.delete(oldestKey);
+  }
+    if (cache.size > maxSize) {
+      evict();
+    }
