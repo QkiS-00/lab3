@@ -76,4 +76,7 @@ function memoize(fn, options = {}) {
 
     return result;
   };
+}if (cache.size > 0) {
+  const oldestKey = cache.keys().next().value;
+  cache.delete(oldestKey);
 }
