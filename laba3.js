@@ -1,4 +1,4 @@
-// laba3.js
+
 function memoize(fn, options = {}) {
   const { maxSize = Infinity, strategy = 'lru', ttl = 0, customEvict = null } = options;
   const cache = new Map();
